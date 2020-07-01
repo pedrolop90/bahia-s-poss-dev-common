@@ -1,0 +1,23 @@
+package common.persistence;
+
+import lombok.NoArgsConstructor;
+
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
+import java.sql.Date;
+import java.time.LocalDate;
+
+@NoArgsConstructor
+@Converter(
+        autoApply = true
+)
+public class LocalDateAttributeConverter implements AttributeConverter<LocalDate, Date> {
+
+    public Date convertToDatabaseColumn(LocalDate locDate) {
+        return locDate == null ? null : Date.valueOf(locDate);
+    }
+
+    public LocalDate convertToEntityAttribute(Date sqlDate) {
+        return sqlDate == null ? null : sqlDate.toLocalDate();
+    }
+}
