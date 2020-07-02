@@ -7,8 +7,8 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.cassandra.core.mapping.Column;
 
+import javax.persistence.Column;
 import java.io.Serializable;
 
 @Getter
@@ -19,11 +19,11 @@ import java.io.Serializable;
 public abstract class AuditableWithAuthorEntity<ID extends Serializable> extends AuditableEntity<ID> {
 
     @CreatedBy
-    @Column("created_by")
+    @Column(name = "created_by")
     private String createdBy;
 
     @LastModifiedBy
-    @Column("updated_by")
+    @Column(name = "updated_by")
     private String updatedBy;
 
 

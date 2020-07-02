@@ -7,8 +7,8 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.cassandra.core.mapping.Column;
 
+import javax.persistence.Column;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -20,11 +20,11 @@ import java.time.LocalDateTime;
 public abstract class AuditableEntity<ID extends Serializable> extends Entity<ID> {
 
     @CreatedDate
-    @Column("created_date")
+    @Column(name = "created_date")
     private LocalDateTime createdDate;
 
     @LastModifiedDate
-    @Column("updated_date")
+    @Column(name = "updated_date")
     private LocalDateTime updatedDate;
 
     public interface Attributes extends Entity.Attributes {

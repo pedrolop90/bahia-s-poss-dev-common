@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.data.cassandra.core.mapping.Column;
 
+import javax.persistence.Column;
 import java.io.Serializable;
 
 @Getter
@@ -18,7 +18,7 @@ public abstract class ClienteEntity<ID extends Serializable> extends AuditableWi
         String CLIENTE_ID = "clienteId";
     }
 
-    @Column("cliente_id")
+    @Column(name = "cliente_id")
     private ID clienteId;
 
 }

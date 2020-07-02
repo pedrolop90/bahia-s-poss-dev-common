@@ -36,6 +36,14 @@
         <repository>
             <id>myMavenRepo.read</id>
             <url>${myMavenRepo.read.url}</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
         </repository>
     </repositories>
 
@@ -43,6 +51,14 @@
         <repository>
             <id>myMavenRepo.write</id>
             <url>${myMavenRepo.write.url}</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
         </repository>
         <snapshotRepository>
             <id>myMavenRepo.write</id>
